@@ -5,17 +5,21 @@ class Input extends Component {
     super(props);
     this.state = { 
       currentInput: '',
+      isLoaded: false
      }
   }
 
   componentDidMount = () => {
-
+    this.setState({isLoaded: true})
   }
 
   updateUserInput = () => {
-    document.getElementById('inputField').value.length > 2 ?
+    if (this.state.isLoaded) {
+    (document.getElementById('inputField').value.length > 2 ?
     this.setState({currentInput: document.getElementById('inputField').value.split(' ').join('')}) :
-    this.setState({currentInput: ''})
+    this.setState({currentInput: ''}));
+    this.setState({isLoaded: false})
+    }
   }
 
   render() { 
@@ -23,7 +27,7 @@ class Input extends Component {
       <div>
         <form class="form-inline">
           <input id="inputField" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onSubmit={this.updateUserInput()}>Search</button>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="button" onSubmit={this.updateUserInput()}>Search</button>
         </form>
       </div>
     );

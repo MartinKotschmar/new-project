@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import Fuse from 'fuse.js';
 import ApiCallNames from './apiCallNames.jsx';
 import NamesList from './namesList';
+import Input from '../components/input'
 
 class Results extends Component {
   constructor(props) {
     super(props);
     this.state = { 
       filteredElements: [],
+      input: Input.currentInput
      }
   }
 

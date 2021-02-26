@@ -17,8 +17,8 @@ class Navbar extends Component {
       <div>
         <nav class="navbar navbar-light bg-light justify-content-between">
           <a class="navbar-brand">Navbar</a>
+          <Input  />
         </nav>
-        <Input  />
       </div> 
      );
   }

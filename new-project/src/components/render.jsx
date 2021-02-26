@@ -1,20 +1,12 @@
-import React, { Component } from 'react';
-import Navbar from './navbar';
-import RenderFilter from './renderFilter';
+import Home from './home'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
-class Render extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {  }
-  }
-  render() { 
-    return ( 
-      <div>
-        <Navbar />
-        <RenderFilter />
-      </div>
-     );
-  }
-}
+ReactDOM.render(
+  <Home /> , document.getElementById('root')
+)
+
  
 export default Render;
